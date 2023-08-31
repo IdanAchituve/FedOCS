@@ -135,7 +135,6 @@ figures/
 output/
 datasets/
 outputs/
-dataset/
 
 # Specific
 *.pt
