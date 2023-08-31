@@ -24,7 +24,7 @@ class MNISTData:
 
     def __init__(self, data_path=None):
         if data_path is None:
-            data_path = Path(os.getcwd()) / "data"
+            data_path = Path(os.getcwd()) / "dataset"
         self.data_path = data_path
 
     def get_data_loaders(self, train_batch_size=256, test_batch_size=512, random_seed=42, val_pct=0.1,

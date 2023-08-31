@@ -6,7 +6,7 @@ from pathlib import Path
 import copy
 import torchvision
 
-from experiments.mnist.dataset import MNISTData
+from experiments.mnist.data import MNISTData
 from experiments.models import *
 from experiments.utils import get_device, set_seed, save_experiment, set_logger, model_save
 
@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(description="MNIST")
 #############################
 #       Dataset Args        #
 #############################
-parser.add_argument("--data-path", type=str, default='./data', help="dataset path")
+parser.add_argument("--data-path", type=str, default='./dataset', help="dataset path")
 parser.add_argument("--val-pct", type=int, default=0.1, help="Number of test examples per class")
 parser.add_argument('--noise', default=2., type=float, help='Gaussian Noise STD')
 parser.add_argument("--num-clients", type=int, default=4, help="number of simulated nodes")
