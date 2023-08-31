@@ -103,13 +103,10 @@ def save_experiment(args, results, return_out_dir=False, save_results=True):
         return out_dir
 
 
-def model_save(model, file=None, log_to_wandb=None):
+def model_save(model, file=None):
     if file is None:
         file = BytesIO()
     torch.save({'model_state_dict': model.state_dict()}, file)
-    if log_to_wandb:
-        wandb.save(file.as_posix())
-
     return file
 
 

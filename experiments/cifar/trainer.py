@@ -199,8 +199,8 @@ def model_evalution(loader, print_clf_report=False, test=True):
 def save_models():
     for client in range(args.num_clients):
         client_model = "best_model_" + str(client) + ".pt"
-        model_save(client_models[client], out_dir / client_model, args.wandb)
-    model_save(classifier, out_dir / "best_model_classifier.pt", args.wandb)
+        model_save(client_models[client], out_dir / client_model)
+    model_save(classifier, out_dir / "best_model_classifier.pt")
 
 def copy_models():
     return copy.deepcopy(client_models), copy.deepcopy(classifier)

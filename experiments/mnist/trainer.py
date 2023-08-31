@@ -96,8 +96,8 @@ scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.5)
 def save_models():
     for client in range(args.num_clients):
         client_model = "best_model_" + str(client) + ".pt"
-        model_save(client_models[client], out_dir / client_model, args.wandb)
-    model_save(decoder, out_dir / "decoder.pt", args.wandb)
+        model_save(client_models[client], out_dir / client_model)
+    model_save(decoder, out_dir / "decoder.pt")
 
 def copy_models():
     return copy.deepcopy(client_models), copy.deepcopy(decoder)
